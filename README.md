@@ -1,6 +1,6 @@
-# grunt_tiny_layout
+# tiny_layout
 
-> The best Grunt plugin ever.
+This is a tiny tool used for page layout.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -14,7 +14,7 @@ npm install grunt_tiny_layout --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt_tiny_layout');
+grunt.loadNpmTasks('tiny_layout');
 ```
 
 ## The "tiny_layout" task
@@ -24,66 +24,45 @@ In your project's Gruntfile, add a section named `tiny_layout` to the data objec
 
 ```js
 grunt.initConfig({
-  tiny_layout: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
+    tiny_layout: {
+        options: {
+            delimiters:['[%','%]'] //use the grunt template function, this set the delimiters for template.
+        },
+        your_options:{
+            layout:'test/fixtures/layout/layout_cat.html',
+            src:['test/fixtures/views/{,**/}*.html'],
+            dest:'tmp/cat'
+        }
+    }
 });
 ```
 
 ### Options
 
-#### options.separator
-Type: `String`
-Default value: `',  '`
+#### options.delimiters
+Type: Array<String>
+Default value: `undefind`
 
-A string value that is used to do something with whatever.
+use the grunt template function to complie the layout, this set the delimiters for template.
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
+### your_options
 
-A string value that is used to do something else with whatever else.
+#### layout
+Type : `String`
 
-### Usage Examples
+The path of layout.
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+#### src
+Type : `Array<String>`
 
-```js
-grunt.initConfig({
-  tiny_layout: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
+The pages that wrapped by layout.
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  tiny_layout: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
+#### dest
+Type : `String`
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
 _(Nothing yet)_
+

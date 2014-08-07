@@ -27,22 +27,22 @@ exports.tiny_layout = {
     // setup here if necessary
     done();
   },
-  default_options: function(test) {
+  cat_options: function(test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/default_options');
-    var expected = grunt.file.read('test/expected/default_options');
-    test.equal(actual, expected, 'should describe what the default behavior is.');
+    var actual = grunt.file.read('tmp/cat/test/fixtures/views/content.html');
+    var expected = grunt.file.read('test/expected/cat/test/fixtures/views/content.html');
+    test.equal(actual, expected, 'should describe what the cat_options behavior is.');
 
     test.done();
   },
-  custom_options: function(test) {
+  dog_options: function(test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/custom_options');
-    var expected = grunt.file.read('test/expected/custom_options');
-    test.equal(actual, expected, 'should describe what the custom option(s) behavior is.');
+    var actual = grunt.file.read('tmp/dog/test/fixtures/views/content.html');
+    var expected = grunt.file.read('test/expected/dog/test/fixtures/views/content.html');
+    test.equal(actual, expected, 'should describe what the dog_options behavior is.');
 
     test.done();
-  },
+  }
 };
