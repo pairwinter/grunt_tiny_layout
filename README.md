@@ -1,4 +1,4 @@
-# tiny_layout
+# grunt_tiny_layout
 
 This is a tiny tool used for page layout.
 
@@ -14,7 +14,7 @@ npm install grunt_tiny_layout --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('tiny_layout');
+grunt.loadNpmTasks('grunt_tiny_layout');
 ```
 
 ## The "tiny_layout" task
