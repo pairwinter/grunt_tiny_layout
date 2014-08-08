@@ -30,7 +30,9 @@ grunt.initConfig({
         },
         your_options:{
             layout:'test/fixtures/layout/layout_cat.html',
-            src:['test/fixtures/views/{,**/}*.html'],
+            expand:true,
+            cwd:'test/fixtures/',
+            src:['views/{,**/}*.html'],
             dest:'tmp/cat'
         }
     }

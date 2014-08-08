@@ -1,7 +1,7 @@
 {
   "name": "grunt_tiny_layout",
   "description": "Simple layout for web app.",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "homepage": "https://github.com/pairwinter/grunt_tiny_layout",
   "author": {
     "name": "DongDong Liu",

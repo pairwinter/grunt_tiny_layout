@@ -35,7 +35,9 @@ module.exports = function (grunt) {
 //                    delimiters:['[%','%]']
                 },
                 layout:'test/fixtures/layout/layout_cat.html',
-                src:['test/fixtures/views/{,**/}*.html'],
+                expand:true,
+                cwd:'test/fixtures/',
+                src:['views/{,**/}*.html'],
                 dest:'tmp/cat'
             },
             dog_options: {
@@ -43,7 +45,9 @@ module.exports = function (grunt) {
                     delimiters:['[%','%]']
                 },
                 layout:'test/fixtures/layout/layout_dog.html',
-                src:['test/fixtures/views/{,**/}*.html'],
+                expand:true,
+                cwd:'test/fixtures/',
+                src:['views/{,**/}*.html'],
                 dest:'tmp/dog'
             }
         },

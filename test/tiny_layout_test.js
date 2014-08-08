@@ -30,8 +30,8 @@ exports.tiny_layout = {
   cat_options: function(test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/cat/test/fixtures/views/content.html');
-    var expected = grunt.file.read('test/expected/cat/test/fixtures/views/content.html');
+    var actual = grunt.file.read('tmp/cat/views/content.html');
+    var expected = grunt.file.read('test/expected/cat/views/content.html');
     test.equal(actual, expected, 'should describe what the cat_options behavior is.');
 
     test.done();
@@ -39,8 +39,8 @@ exports.tiny_layout = {
   dog_options: function(test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/dog/test/fixtures/views/content.html');
-    var expected = grunt.file.read('test/expected/dog/test/fixtures/views/content.html');
+    var actual = grunt.file.read('tmp/dog/views/content.html');
+    var expected = grunt.file.read('test/expected/dog/views/content.html');
     test.equal(actual, expected, 'should describe what the dog_options behavior is.');
 
     test.done();

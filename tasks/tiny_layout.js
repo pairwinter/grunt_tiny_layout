@@ -7,6 +7,7 @@
  */
 
 'use strict';
+var path = require('path');
 var _ = require('underscore');
 
 module.exports = function (grunt) {
@@ -19,14 +20,11 @@ module.exports = function (grunt) {
         var options = this.options({
 
         });
-
         if(options.delimiters){
             grunt.template.addDelimiters('tiny_layout_delimiters',options.delimiters[0],options.delimiters[1]);
         }
 
-
         // Iterate over all specified file groups.
-
         this.files.forEach(function (f) {
             var layoutFilePath = f.layout;
             var layoutFileContent = grunt.file.read(layoutFilePath);
@@ -43,11 +41,13 @@ module.exports = function (grunt) {
             _.forEach(srcFilePaths,function(srcFilePath){
                 var srcFileContent = grunt.file.read(srcFilePath);
                 var mergeResult = grunt.template.process(layoutFileContent,{data:{body:srcFileContent},delimiters:'tiny_layout_delimiters'});
-                grunt.file.write(f.dest+'/'+srcFilePath, mergeResult);
+                var relativeSrcFilePath = f.orig.expand?path.relative(f.orig.cwd||'',srcFilePath):srcFilePath;
+                var destPath = f.orig.dest + path.sep + relativeSrcFilePath;
+                grunt.file.write(destPath, mergeResult);
             });
 
             // Print a success message.
-            grunt.log.writeln('File "' + f.dest + '" created.');
+            grunt.log.writeln('File "' + f.orig.dest + '" created.');
         });
     });
 
