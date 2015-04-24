@@ -47,7 +47,9 @@ module.exports = function (grunt) {
             });
 
             // Print a success message.
-            grunt.log.writeln('File "' + f.orig.dest + '" created.');
+            if (grunt.option('debug')) {
+                grunt.log.writeln('File "' + f.orig.dest + '" created.');
+            }
         });
     });
 
