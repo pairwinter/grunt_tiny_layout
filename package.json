@@ -1,7 +1,7 @@
 {
   "name": "grunt_tiny_layout",
   "description": "Simple layout for web app.",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "homepage": "https://github.com/pairwinter/grunt_tiny_layout",
   "author": {
     "name": "DongDong Liu",
@@ -20,23 +20,15 @@
       "url": "https://github.com/pairwinter/grunt_tiny_layout/blob/master/LICENSE-MIT"
     }
   ],
-  "engines": {
-    "node": ">= 0.8.0"
-  },
   "scripts": {
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-jshint": "^0.9.2",
-    "grunt-contrib-nodeunit": "^0.3.3"
-  },
-  "dependencies": {
-    "underscore": "^1.6.0"
-  },
-  "peerDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": "~1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "underscore": "^1.7.0"
   },
   "keywords": [
     "gruntplugin"
